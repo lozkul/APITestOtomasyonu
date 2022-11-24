@@ -52,8 +52,13 @@ public class C04_Put_ResponseBilgileriAssertions {
         response.prettyPrint();
 
         // 4- Assertion
-        response.then().assertThat().statusCode(200).contentType("application/json; charset=utf-8").
-                header("Server", "cloudflare").statusLine("HTTP/1.1 200 OK");
+        response.
+                then().
+                assertThat().
+                statusCode(200).
+                contentType("application/json; charset=utf-8").
+                header("Server", "cloudflare").
+                statusLine("HTTP/1.1 200 OK");
 
     }
 
