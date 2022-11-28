@@ -1,5 +1,6 @@
 package test;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
 public class C08_JSONPathKullanimi {
@@ -26,7 +27,7 @@ public class C08_JSONPathKullanimi {
 }
      */
     @Test
-    public void jsonPath01(){
+    public void jsonPath01() throws JSONException {
         JSONObject kisiBilgisi = new JSONObject();
         JSONObject adresBilgisi = new JSONObject();
         JSONObject cepTelBilgisi = new JSONObject();
