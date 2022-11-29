@@ -52,7 +52,7 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
         innerBody.put("checkout","2021-06-10");
         reqBody.put("firstname" , "Ali");
         reqBody.put("lastname" , "Bak");
-        reqBody.put("totalprice" , 500);
+        reqBody.put("totalprice" , 5100);
         reqBody.put("depositpaid" ,false);
         reqBody.put("bookingdates" , innerBody);
         reqBody.put("additionalneeds" , "wi-fi");
@@ -64,7 +64,7 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
         bookingdates.put("checkout","2021-06-10");
         booking.put("firstname" , "Ali");
         booking.put("lastname" , "Bak");
-        booking.put("totalprice" , 500);
+        booking.put("totalprice" , 5100);
         booking.put("depositpaid" ,false);
         booking.put("bookingdates" , innerBody);
         booking.put("additionalneeds" , "wi-fi");
@@ -75,6 +75,16 @@ public class C12_Post_ExpectedDataVeJsonPathIleAssertion {
         response.prettyPrint();
         // 4 - Assertion
         JsonPath resJS = response.jsonPath();
-        assertEquals(expBody.getJSONObject("booking").get("firstname"),resJS.get("booking.firstname"));
+        assertEquals("Booking firstname calismadi", expBody.getJSONObject("booking").get("firstname"),resJS.get("booking.firstname"));
+        assertEquals("Booking lastname calismadi", expBody.getJSONObject("booking").get("lastname"), resJS.get("booking.lastname"));
+        assertEquals(expBody.getJSONObject("booking").get("totalprice"), resJS.get("booking.totalprice"));
+        assertEquals(expBody.getJSONObject("booking").get("depositpaid"), resJS.get("booking.depositpaid"));
+        assertEquals(expBody.getJSONObject("booking").getJSONObject("bookingdates").get("checkin"), resJS.get("booking.bookingdates.checkin"));
+        assertEquals(expBody.getJSONObject("booking").getJSONObject("bookingdates").get("checkout"), resJS.get("booking.bookingdates.checkout"));
+        assertEquals(expBody.getJSONObject("booking").get("additionalneeds"), resJS.get("booking.additionalneeds"));
+
+
+
+
     }
 }
