@@ -40,18 +40,7 @@ public class C14_Put_SoftAssertIleExpectedDataTesti {
     public void put01(){
         // 1 - URL ve body olustur, Put metodu icin body gerekli
         String url = "http://dummy.restapiexample.com/api/v1/update/21";
-        /*
-        Request Body
-            {
-                "status":"success",
-                "data":{
-                        "name":“Ahmet",
-                        "salary":"1230",
-                        "age":"44",
-                        "id":40
-                        }
-            }
-         */
+
         JSONObject data = new JSONObject();
         JSONObject reqBody = new JSONObject();
         data.put("name","Ahmet");
@@ -61,21 +50,7 @@ public class C14_Put_SoftAssertIleExpectedDataTesti {
         reqBody.put("data",data);
         reqBody.put("status","success");
         // 2 - Expected Data hazirla
-        /*
-        {
-            "status":"success",
-            "data":{
-                "status":"success",
-                "data":{
-                        "name":“Ahmet",
-                        "salary":"1230",
-                        "age":"44",
-                        "id":40
-                        }
-                   },
-            "message":"Successfully! Record has been updated."
-            }
-         */
+
         JSONObject expData = new JSONObject();
         expData.put("status","success");
         expData.put("data",reqBody);
