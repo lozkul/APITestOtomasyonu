@@ -1,8 +1,7 @@
 package test;
 
-import baseUrl.JsonPlaceHolderBaseURL;
+import baseURL.JsonPlaceHolderBaseURL;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 

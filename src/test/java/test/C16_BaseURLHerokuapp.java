@@ -1,5 +1,4 @@
 package test;
-import baseURL.HerokuAppBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.json.JSONObject;
@@ -7,7 +6,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItem;
-public class C16_BaseUrlHerokuapp extends HerokuAppBaseUrl {
+public class C16_BaseURLHerokuapp extends baseURL.HerokuAppBaseURL {
     /*
         Class icinde 2 Test metodu olusturun ve asagidaki testleri yapin
     */
