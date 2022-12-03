@@ -12,7 +12,7 @@ import testData.TestDataDummy;
 import static io.restassured.RestAssured.given;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class D20_GET_TestDataKullanimi extends DummyBaseURL {
+public class C20_GET_TestDataKullanimi extends DummyBaseURL {
 
     /*
         http://dummy.restapiexample.com/api/v1/employee/3 url'ine bir GET request
