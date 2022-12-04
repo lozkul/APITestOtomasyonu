@@ -54,10 +54,10 @@ public class TestDataDummy {
         HashMap<String, Object> innerMap =new HashMap<>();
         HashMap<String, Object> expMap =new HashMap<>();
 
-        innerMap.put("id", 3);
+        innerMap.put("id", 3.0);
         innerMap.put("employee_name","Ashton Cox");
-        innerMap.put("employee_salary",86000);
-        innerMap.put("employee_age",66);
+        innerMap.put("employee_salary",86000.0);
+        innerMap.put("employee_age",66.0);
         innerMap.put("profile_image","");
 
         expMap.put("status","success");
