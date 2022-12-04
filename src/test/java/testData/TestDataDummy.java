@@ -1,6 +1,10 @@
 package testData;
 import jdk.security.jarsigner.JarSigner;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Objects;
+
 public class TestDataDummy {
 
 
@@ -30,6 +34,38 @@ public class TestDataDummy {
         expecDataJSON.put("message","Successfully! Record has been fetched.");
 
         return expecDataJSON;
+    }
+
+    public HashMap expectedDataOlusturMap(){
+        /*
+        {
+"status":"success",
+"data":{
+        "id":3,
+        "employee_name":"Ashton Cox",
+        "employee_salary":86000,
+        "employee_age":66,
+        "profile_image":""
+        },
+"message":"Successfully! Record has been fetched."
+}
+         */
+
+        HashMap<String, Object> innerMap =new HashMap<>();
+        HashMap<String, Object> expMap =new HashMap<>();
+
+        innerMap.put("id", 3);
+        innerMap.put("employee_name","Ashton Cox");
+        innerMap.put("employee_salary",86000);
+        innerMap.put("employee_age",66);
+        innerMap.put("profile_image","");
+
+        expMap.put("status","success");
+        expMap.put("message","Successfully! Record has been fetched.");
+        expMap.put("data", innerMap);
+
+        return expMap;
+
     }
 
 }
