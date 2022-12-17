@@ -7,9 +7,8 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class C04_Put_ResponseBilgileriAssertions {
-
-/*
+public class C04_PutPractise {
+    /*
         https://jsonplaceholder.typicode.com/posts/70 url’ine asagidaki
         Json formatindaki body ile bir PUT request gonderdigimizde
                 {
@@ -33,35 +32,29 @@ public class C04_Put_ResponseBilgileriAssertions {
 
         JSONObject reqBody = new JSONObject();
 
-        reqBody.put("title","Cemile");
-        reqBody.put("body","Bardak");
+        reqBody.put("title", "Cemile");
+        reqBody.put("body", "Barak");
         reqBody.put("userId", 3);
         reqBody.put("id", 1);
-
-        System.out.println(reqBody);
 
         // 2- Expected Datayi hazırla
 
 
         // 3- Reponse'u kaydet
-        Response response = given().
-                                    contentType(ContentType.JSON).
-                            when().
-                                    body(reqBody.toString()).
-                                    put(url);
-        response.prettyPrint();
+        Response response = given()
+                                .contentType(ContentType.JSON)
+                            .when()
+                                 .body(reqBody.toString())
+                            .put(url);
+
 
         // 4- Assertion
-        response.
-                then().
-                assertThat().
-                statusCode(200).
-                contentType("application/json; charset=utf-8").
-                header("Server", "cloudflare").
-                statusLine("HTTP/1.1 200 OK");
+        response.then()
+                .assertThat()
+                .statusCode(200)
+                .contentType("application/json; charset=utf-8")
+                .header("Server", "cloudflare")
+                .statusLine("HTTP/1.1 200 OK");
 
     }
-
-
-
 }

@@ -33,20 +33,27 @@ public class C08_JSONPathKullanimi {
         JSONObject cepTelBilgisi = new JSONObject();
         JSONObject evTelBilgisi = new JSONObject();
         JSONArray telBilgileri = new JSONArray();
-        cepTelBilgisi.put("type","iPhone");
-        cepTelBilgisi.put("number","0123-4567-8888");
-        evTelBilgisi.put("type","home");
-        evTelBilgisi.put("number","0123-4567-8910");
-        telBilgileri.put(cepTelBilgisi);
-        telBilgileri.put(evTelBilgisi);
-        adresBilgisi.put("streetAddress","naist street");
-        adresBilgisi.put("city","Nara");
-        adresBilgisi.put("postalCode","630-0192");
+
         kisiBilgisi.put("firstName","John");
         kisiBilgisi.put("lastName","doe");
         kisiBilgisi.put("age",26);
         kisiBilgisi.put("address",adresBilgisi);
         kisiBilgisi.put("phoneNumbers",telBilgileri);
+
+        adresBilgisi.put("streetAddress","naist street");
+        adresBilgisi.put("city","Nara");
+        adresBilgisi.put("postalCode","630-0192");
+
+        cepTelBilgisi.put("type","iPhone");
+        cepTelBilgisi.put("number","0123-4567-8888");
+
+        evTelBilgisi.put("type","home");
+        evTelBilgisi.put("number","0123-4567-8910");
+
+        telBilgileri.put(cepTelBilgisi);
+        telBilgileri.put(evTelBilgisi);
+
+
         System.out.println(kisiBilgisi);
         System.out.println("Isim : " + kisiBilgisi.get("firstName"));
         System.out.println("Soyisim : " + kisiBilgisi.get("lastName"));
@@ -54,10 +61,8 @@ public class C08_JSONPathKullanimi {
         System.out.println("Sehir : " + kisiBilgisi.getJSONObject("address").get("city"));
         System.out.println("Posta Kodu : " + kisiBilgisi.getJSONObject("address").get("postalCode"));
         System.out.println("Sokak adi : " + kisiBilgisi.getJSONObject("address").get("streetAddress"));
-        System.out.println("Cep Tel : " + kisiBilgisi.
-                getJSONArray("phoneNumbers").
-                getJSONObject(0).
-                get("number"));
+        System.out.println("Cep Tel : " + kisiBilgisi.getJSONArray("phoneNumbers").
+                                                      getJSONObject(0).get("number"));
         /*
         {
         "firstName":"John",

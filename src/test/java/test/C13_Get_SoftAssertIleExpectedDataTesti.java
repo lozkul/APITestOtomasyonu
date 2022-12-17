@@ -26,7 +26,7 @@ Response Body
     @Test
     public void get01(){
 
-        // 1 - Request icin URL ve Body olustur, Get request icin Body ihtiyaci yok
+        // 1 - Request icin URL ve Body olustur
 
         String url = "http://dummy.restapiexample.com/api/v1/employee/3";
 

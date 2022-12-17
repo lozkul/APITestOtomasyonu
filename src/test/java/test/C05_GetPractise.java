@@ -6,9 +6,8 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class C05_Get_ResponseBodyTesti {
-
-/*
+public class C05_GetPractise {
+    /*
         https://jsonplaceholder.typicode.com/posts/44 url'ine bir GET request yolladigimizda
         donen Response’in
              status code'unun 200,
@@ -30,7 +29,7 @@ public class C05_Get_ResponseBodyTesti {
 
         // 3- Reponse'u kaydet
         Response response = given().when().get(url);
-        //response.prettyPrint();
+        response.prettyPrint();
 
         // 4- Assertion
         response.
@@ -42,7 +41,5 @@ public class C05_Get_ResponseBodyTesti {
                 body("title",Matchers.equalTo("optio dolor molestias sit"));
 
     }
-
-
 
 }

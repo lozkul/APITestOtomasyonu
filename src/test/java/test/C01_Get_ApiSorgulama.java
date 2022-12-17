@@ -18,7 +18,7 @@ public class C01_Get_ApiSorgulama {
     @Test
     public void get01(){
         // 1- Request için URL ve Body hazırla (bu soruda body testi yok)
-        String url = "https://restful-booker.herokuapp.com/booking/256884";
+        String url = "https://restful-booker.herokuapp.com/booking/1";
 
         // 2- Expected Datayi hazırla (bu soruda bu yok)
 

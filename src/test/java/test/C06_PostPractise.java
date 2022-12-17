@@ -8,7 +8,8 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class C06_Post_ResponseBodyTesti {
+public class C06_PostPractise {
+
     /*  https://jsonplaceholder.typicode.com/posts
          url’ine asagidaki body ile bir POST request gonderdigimizde
         {
@@ -34,30 +35,32 @@ public class C06_Post_ResponseBodyTesti {
 
         JSONObject reqBody = new JSONObject();
 
-        reqBody.put("title","API");
-        reqBody.put("body","API ogrenmek ne guzel");
+        reqBody.put("title", "API");
+        reqBody.put("body", "API ogrenmek ne guzel");
         reqBody.put("userId", 10);
+
+        System.out.println(reqBody);
 
         // 2- Expected Datayi hazırla
 
 
         // 3- Reponse'u kaydet
         Response response = given().
-                    contentType(ContentType.JSON).
-                when().
-                    body(reqBody.toString()).
-                    post(url);
-        //response.prettyPrint();
+                                    contentType(ContentType.JSON).
+                            when().
+                                    body(reqBody.toString()).
+                            post(url);
+        response.prettyPrint();
 
         // 4- Assertion
         response.
                 then().
                 assertThat().
-                    statusCode(201).
-                    contentType("application/json").
-                    body("title",Matchers.equalTo("API")).
-                    body("userId", Matchers.lessThan(100)).
-                    body("title",Matchers.containsString("API"));
+                statusCode(201).
+                contentType("application/json").
+                body("title", Matchers.equalTo("API")).
+                body("userId", Matchers.lessThan(100)).
+                body("title",Matchers.containsString("API"));
 
     }
 
