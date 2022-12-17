@@ -49,19 +49,21 @@ public class C14_Put_SoftAssertIleExpectedDataTesti {
         data.put("id",40);
         reqBody.put("data",data);
         reqBody.put("status","success");
-        // 2 - Expected Data hazirla
 
+        // 2 - Expected Data hazirla
         JSONObject expData = new JSONObject();
         expData.put("status","success");
         expData.put("data",reqBody);
         expData.put("message","Successfully! Record has been updated.");
+
         // 3 - Response'u kaydet
         Response response = given().
-                contentType(ContentType.JSON).
-                when().
-                body(reqBody.toString()).
-                put(url);
+                                    contentType(ContentType.JSON).
+                            when().
+                                    body(reqBody.toString()).
+                            put(url);
         response.prettyPrint();
+
         // 4 - Assertion
         JsonPath respJP = response.jsonPath();
         SoftAssert softAssert = new SoftAssert();
